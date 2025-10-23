@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OptiTech Automation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typicons.font@2.0.9/src/font/typicons.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+/* ===== Base ===== */
+body, html {margin:0; padding:0; font-family:'Open Sans', sans-serif; color:#222;}
+.container {width:80%; max-width:960px; margin:0 auto; padding:0 20px;}
+h1,h2,h3,h4,h5,h6{margin:0 0 1.5rem 0;font-weight:300;}
+ul{padding-left:0;}
+ul li{margin-bottom:1rem;}
+
+/* ===== Header / Hero Section ===== */
+#hero {
+  background-color: white;  /* white background */
+  color: #0B3D91;           /* dark blue text */
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+#hero img.logo {width:150px; margin-bottom:20px;}
+#hero h1 {color:#0B3D91; font-size:3rem; margin-bottom:20px;}
+#hero h2 {
+  color:#0B3D91;
+  font-size:1.5rem;
+  border-bottom:3px solid #1E90FF; /* blue line */
+  display:inline-block;
+  padding-bottom:10px;
+  margin-bottom:30px;
+}
+#hero p {color:#0B3D91; font-size:1.1rem; max-width:600px; margin:0 auto 20px auto;}
+.scroll-down {
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:2rem;
+  animation: bounce 2s infinite;
+  cursor:pointer;
+  opacity:0.8;
+}
+@keyframes bounce {
+  0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-15px); }
+  60% { transform: translateX(-50%) translateY(-7px); }
+}
+
+/* ===== Navigation ===== */
+.main_nav {
+  position:fixed;
+  top:0; width:100%;
+  z-index:999;
+  padding:15px 0;
+  text-align:center;
+  transition:0.3s;
+  background:none;
+}
+.main_nav.sticky {background:#fff; color:#222;}
+.main_nav nav ul {list-style:none; margin:0; padding:0;}
+.main_nav nav ul li {display:inline-block; margin-left:30px;}
+.main_nav nav ul li a {text-decoration:none; text-transform:uppercase; font-size:12px; color:inherit;}
+.mobile-toggle {display:none; cursor:pointer; position:absolute; right:20px; top:0;}
+.mobile-toggle span {display:block; width:30px; height:4px; background:#000; margin-bottom:6px;}
+@media(max-width:766px){.mobile-toggle{display:block;} nav ul li{display:block;margin:10px 0;}}
+
+/* ===== About Section ===== */
+#about {
+  background: linear-gradient(135deg, #1E90FF, #4169E1);
+  color: white;
+  text-align: center;
+  padding:100px 20px;
+}
+#about h1, #about h3, #about p {color:white;}
+#about .icon {color:white; font-size:28px; padding-right:10px;}
+.block {width:70px; height:2px; margin:30px auto; background:white;}
+
+/* ===== Team Section ===== */
+.team {
+  text-align: center;
+  padding:50px 20px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color:white;
+}
+.team h2 {font-size:2em; margin-bottom:40px;}
+.team-members {display:flex; justify-content:center; gap:40px; flex-wrap:wrap;}
+.member {display:flex; flex-direction:column; align-items:center;}
+.member img {width:150px; height:150px; border-radius:50%; object-fit:cover; border:3px solid white; margin-bottom:15px;}
+.member h3 {font-size:1.2em;}
+
+/* ===== Footer ===== */
+footer {padding:40px 0; background: linear-gradient(135deg, #5fc3e4 0%, #1b6ac9 100%); color:#fff; text-align:center;}
+footer .socialIcons{font-size:34px; margin-right:10px; color:#fff;}
+footer p{margin:0; margin-top:10px;}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="main_nav">
+  <div class="container">
+    <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    <nav>
+      <ul>
+        <li><a class="smoothscroll" href="#hero">Home</a></li>
+        <li><a class="smoothscroll" href="#about">About</a></li>
+        <li><a class="smoothscroll" href="#services">Services</a></li>
+        <li><a class="smoothscroll" href="#team">Team</a></li>
+        <li><a class="smoothscroll" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section id="hero">
+  <img src="logo.png" alt="Logo" class="logo">
+  <h1>From Website to Customers, We’ve Got You Covered</h1>
+  <h2>Create, Promote, Succeed With Us</h2>
+  <div class="scroll-down">&#8595;</div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="container">
+    <h1>About Us</h1>
+    <div class="block"></div>
+    <p>We help small businesses thrive online. By creating clear, engaging websites, we turn visitors into customers.</p>
+    <h3><span class="typcn typcn-device-desktop icon"></span>Our Approach</h3>
+    <p>We combine creativity and technology to deliver solutions tailored to your needs.</p>
+    <h3><span class="typcn typcn-cog-outline icon"></span>Our Goal</h3>
+    <p>Empowering entrepreneurs to succeed digitally without stress.</p>
+    <h3><span class="typcn typcn-lightbulb icon"></span>Our Mission</h3>
+    <p>Making professional online presence accessible, simple, and effective.</p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <div class="container">
+    <h1>Services</h1>
+    <div class="block"></div>
+    <ul>
+      <li>Website Creation – Professional websites tailored to your business.</li>
+      <li>Logo & Branding – Make your brand look polished online.</li>
+      <li>Marketing & Promotion – Social media strategies and campaigns.</li>
+      <li>24/7 Customer Support – Friendly chat to answer questions anytime.</li>
+      <li>Search Visibility – Optimize your site so clients can find you.</li>
+      <li>Ongoing Support – Assistance to grow your online presence.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team">
+  <h2>Our Team</h2>
+  <div class="team-members">
+    <div class="member">
+      <img src="images/Corina.jpg" alt="Corina">
+      <h3>Corina</h3>
+    </div>
+    <div class="member">
+      <img src="images/Cristian.jpg" alt="Cristian">
+      <h3>Cristian</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Connect with us:</p>
+  <a class="socialIcons" href="#"><span class="typcn typcn-social-facebook"></span></a>
+  <a class="socialIcons" href="#"><span class="typcn typcn-social-twitter"></span></a>
+  <a class="socialIcons" href="#"><span class="typcn typcn-social-linkedin"></span></a>
+  <p>&copy; 2025 OptiTech Automation</p>
+</footer>
+
+<script>
+// Smooth scrolling
+$('.smoothscroll').on('click', function(e){
+  e.preventDefault();
+  var target = this.hash;
+  $('html, body').animate({ scrollTop: $(target).offset().top }, 800);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* ===== Global Styles ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Navigation ===== */
+.main_nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  z-index: 100;
+}
+
+.main_nav.sticky {
+  background: rgba(0, 0, 50, 0.8);
+}
+
+.main_nav nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.main_nav nav ul li a:hover {
+  color: #00d4ff;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .main_nav nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(0,0,50,0.9);
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .main_nav nav ul.open {
+    display: flex;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+/* ===== Hero Section (Logo & Header) ===== */
+#hero {
+  background-color: #fff;      /* white background */
+  color: #0B3D91;              /* dark blue text */
+  text-align: center;
+  padding: 100px 20px;
+}
+
+#hero h1 {
+  color: #0B3D91;              /* header dark blue */
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#hero h2 {
+  color: #0B3D91;              /* subtitle dark blue */
+  font-size: 1.5em;
+  border-bottom: 3px solid #1E90FF; /* blue line under subtitle */
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+#hero p {
+  color: #0B3D91;              /* other text dark blue */
+  font-size: 1.1em;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+/* Scroll Down Arrow */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-15px); }
+  60% { transform: translateX(-50%) translateY(-7px); }
+}
+
+/* ===== About Us Section ===== */
+#about {
+  background: linear-gradient(135deg, #1E90FF, #4169E1); /* blue gradient */
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+#about h2, #about p, #about li {
+  color: #fff;
+}
+
+#about .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+
+#about .social-icons a:hover {
+  color: #87CEFA; /* lighter blue on hover */
+}
+
+/* ===== Quote Section ===== */
+.quoteLoop {
+  padding: 80px 20px;
+  text-align: center;
+  background: rgba(0,0,50,0.6);
+}
+
+.quoteLoop .quote {
+  display: none;
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  transition: opacity 1s ease-in-out;
+}
+
+/* ===== Social Media Footer ===== */
+.social-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0;
+  background: rgba(0,0,50,0.7);
+}
+
+.social-footer a {
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-footer a:hover {
+  color: #00d4ff;
+  transform: scale(1.2);
+}
+
+/* ===== Team Section ===== */
+.team {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* blue gradient */
+  color: #fff;
+}
+
+.team h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member img {
+  width: 150px;   /* circle size */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* keep image inside circle */
+  border: 3px solid #fff;
+  margin-bottom: 15px;
+}
+
+.member h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
